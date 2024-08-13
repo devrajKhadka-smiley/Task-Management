@@ -1,0 +1,225 @@
+:root {
+  --hoverColor: #a14a24;
+  --activeColor: #a14a24; 
+  --whiteColor: #fff;
+  --lightGray: #f4f4f4;
+  --darkGray: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 120px;
+  margin: 0;
+  background-image: url("./Assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.App {
+  text-align: center;
+}
+
+.navBar {
+  margin-top: 15px; 
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.navLogo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--blackColor);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--blackColor);
+  margin: 5px auto;
+  transition: 0.3s;
+}
+
+.navBarList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.navBarItem {
+  margin: 0 20px;
+  padding: 10px 0;
+}
+
+.navBarLink {
+  color: var(--blackColor);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.navBarLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--activeColor);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+
+.navBarLink:hover {
+  color: var(--hoverColor);
+}
+
+.navBarLink:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.active {
+  color: var(--activeColor);
+}
+
+.active::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.profileIcon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.profileDropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: var(--whiteColor);
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 10px 20px;
+  color: var(--darkGray);
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdownItem:hover {
+  background-color: var(--lightGray);
+  color: var(--hoverColor);
+}
+
+.showMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navBarList {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--whiteColor);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+}
+
+@media (max-width: 490px) {
+  .navContainer {
+    margin-top: 20px;
+    justify-content: space-between;
+    padding: 90 10px;
+  }
+
+  .navLogo {
+    margin-right: 100px;
+    margin-left: -50px;
+  }
+
+  .navBarList {
+    padding: 20px;
+    border-top: 1px solid var(--lightGray);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navBarItem {
+    margin: 15px 0;
+    padding: 10px 0;
+  }
+
+  .navBarLink {
+    font-size: 20px;
+    color: var(--blackColor);
+  }
+
+  .bar {
+    background: var(--blackColor);
+  }
+
+  .profileIcon {
+    display: none;
+  }
+
+  .profileDropdown {
+    width: 100%;
+  }
+}

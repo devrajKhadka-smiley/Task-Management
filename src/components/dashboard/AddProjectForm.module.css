@@ -1,0 +1,86 @@
+/* AddProjectForm.module.css */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.projectFormContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectInput,
+.projectTextarea,
+.projectSelect {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.projectInput {
+    width: 100%;
+}
+
+.projectTextarea {
+    width: 100%;
+    height: 100px;
+    resize: vertical;
+}
+
+.projectSelect {
+    width: 100%;
+    height: 40px; /* Adjust height for single-select dropdown */
+}
+
+.saveButton,
+.closeButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.saveButton {
+    background-color: #28a745;
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: #218838;
+}
+
+.closeButton {
+    background-color: #dc3545;
+    color: white;
+}
+
+.closeButton:hover {
+    background-color: #c82333;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,26 @@
+:root {
+    --hoverColor: #a14a24;
+    --blackColor: #000;
+    --whitecolor: #fff;
+    --lightGray: #f4f4f4;
+    --darkGray: #333;
+    --waterColor: rgba(0,0, 255, 0.2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0 120px;
+    margin: 0;
+    background-image: url("./assets/bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-y: hidden;
+}
